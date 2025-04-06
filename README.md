@@ -35,8 +35,6 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/taskmanager
 # AWS S3 Configuration
 S3_BUCKET_NAME=your-task-manager-bucket
 AWS_REGION=us-east-1
-AWS_ACCESS_KEY_ID=your_aws_access_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret_key
 
 # RDS Configuration
 RDS_HOST=your-rds-endpoint.rds.amazonaws.com
@@ -45,9 +43,7 @@ RDS_PASSWORD=your_database_password
 RDS_DATABASE=taskmanager
 RDS_PORT=5432
 
-# Server Configuration
 PORT=5000
-JWT_SECRET=your_jwt_secret_key
 ```
 
 #### Frontend (.env)
@@ -59,13 +55,15 @@ REACT_APP_BACKEND_URL=http://localhost:5000/api
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/task-manager.git
-cd task-manager
+git clone https://github.com/Selvaraj-Sathish/MERN-S3-RDS.git
+
+cd MERN-S3-RDS
 ```
 
 ### 2. Install Dependencies
 ```bash
 # Install backend dependencies
+
 cd backend
 npm install
 
