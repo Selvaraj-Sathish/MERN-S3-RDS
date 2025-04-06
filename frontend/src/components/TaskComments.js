@@ -10,21 +10,22 @@ const TaskComments = ({ taskId }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchComments();
-  }, [taskId, fetchComments]);
+    // Define fetchComments inside useEffect to avoid initialization error
+    const fetchComments = async () => {
+      try {
+        setLoading(true);
+        const commentsData = await getTaskComments(taskId);
+        setComments(commentsData);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching comments:', err);
+        setError('Failed to load comments');
+        setLoading(false);
+      }
+    };
 
-  const fetchComments = async () => {
-    try {
-      setLoading(true);
-      const commentsData = await getTaskComments(taskId);
-      setComments(commentsData);
-      setLoading(false);
-    } catch (err) {
-      console.error('Error fetching comments:', err);
-      setError('Failed to load comments');
-      setLoading(false);
-    }
-  };
+    fetchComments();
+  }, [taskId]); // Only depends on taskId
 
   const handleSubmit = async (e) => {
     e.preventDefault();
