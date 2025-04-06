@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 
-const TaskItem = ({ task, onDelete, onEdit }) => {
+const TaskItem = ({ task, onDelete, onEdit, onView }) => {
   const getStatusBadgeClass = (status) => {
     switch (status) {
       case 'pending':
@@ -48,11 +48,15 @@ const TaskItem = ({ task, onDelete, onEdit }) => {
         <small>Created: {formatDate(task.createdAt)}</small>
       </div>
       
-      <button className="edit-btn" onClick={() => onEdit(task)}>
+      <button className="view-btn" onClick={() => onView(task._id)} title="View details">
+        <FaEye />
+      </button>
+      
+      <button className="edit-btn" onClick={() => onEdit(task)} title="Edit task">
         <FaEdit />
       </button>
       
-      <button className="delete-btn" onClick={() => onDelete(task._id)}>
+      <button className="delete-btn" onClick={() => onDelete(task._id)} title="Delete task">
         <FaTrash />
       </button>
     </div>
