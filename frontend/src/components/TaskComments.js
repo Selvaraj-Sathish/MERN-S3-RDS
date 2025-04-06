@@ -11,7 +11,7 @@ const TaskComments = ({ taskId }) => {
 
   useEffect(() => {
     fetchComments();
-  }, [taskId]);
+  }, [taskId, fetchComments]);
 
   const fetchComments = async () => {
     try {

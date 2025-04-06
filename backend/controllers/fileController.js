@@ -54,7 +54,7 @@ exports.uploadFile = (req, res) => {
         Key: `uploads/${fileName}`,
         Body: req.file.buffer,
         ContentType: req.file.mimetype,
-        ACL: 'public-read'
+        //ACL: 'public-read'
       };
       
       // Upload file to S3

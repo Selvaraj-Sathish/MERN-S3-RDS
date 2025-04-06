@@ -71,7 +71,7 @@ const TaskAttachments = ({ taskId }) => {
       return `${(bytes / KB).toFixed(1)} KB`;
     } else {
       return `${(bytes / MB).toFixed(1)} MB`;
-[O    }
+    }
   };
 
   return (
