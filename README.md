@@ -1,1 +1,1 @@
-check latest
+try check latest
