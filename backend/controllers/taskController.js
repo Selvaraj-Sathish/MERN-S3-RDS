@@ -35,6 +35,7 @@ exports.getTask = async (req, res) => {
 exports.createTask = async (req, res) => {
   try {
     const task = await Task.create(req.body);
+    console.log('Task created successfully:', task);
     res.status(201).json({ success: true, data: task });
   } catch (error) {
     if (error.name === 'ValidationError') {
